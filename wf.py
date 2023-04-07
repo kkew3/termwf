@@ -53,7 +53,7 @@ def prompt_wf():
     os.chdir(basedir)
     find_args = [
         'find', '.', '-mindepth', '1', '-maxdepth', '1', '-type', 'd', '-not',
-        '-name', '__pycache__'
+        '(', '-name', '__pycache__', '-or', '-name', '.*', ')'
     ]
     with subprocess.Popen(
             find_args,
